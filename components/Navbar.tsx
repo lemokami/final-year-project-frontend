@@ -1,4 +1,5 @@
 import { Button, Container, Row, Text } from '@nextui-org/react';
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 const Navbar = () => {
   return (
@@ -6,7 +7,7 @@ const Navbar = () => {
       <Container fluid>
         <Row align={'center'} justify={'space-between'}>
           <Text h3>AJGW</Text>
-          <Button>Connect Wallet</Button>
+          <WalletMultiButton />
         </Row>
       </Container>
     </div>
