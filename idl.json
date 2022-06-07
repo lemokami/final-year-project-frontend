@@ -1,0 +1,107 @@
+{
+  "version": "0.1.0",
+  "name": "deep_clean",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "data",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "edit",
+          "type": "bool"
+        },
+        {
+          "name": "share",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "uploadmedia",
+      "accounts": [
+        {
+          "name": "data",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "userPublicKey",
+          "type": "publicKey"
+        },
+        {
+          "name": "mediaHash",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "sharemedia",
+      "accounts": [
+        {
+          "name": "data",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "userSharingMedia",
+          "type": "publicKey"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Metadata",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "creator",
+            "type": "publicKey"
+          },
+          {
+            "name": "mediaHash",
+            "type": "string"
+          },
+          {
+            "name": "editable",
+            "type": "bool"
+          },
+          {
+            "name": "sharable",
+            "type": "bool"
+          },
+          {
+            "name": "peopleWhoShared",
+            "type": {
+              "vec": "publicKey"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "5s4ZVnacCK35W8pkuMrLwyXcAU8hrV2GLW1DuKuXKYHV"
+  }
+}
